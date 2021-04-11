@@ -14,4 +14,5 @@ node {
        sh 'cd complete && gradle run'
      }
   }
+  office365ConnectorSend message: "Finished ${env.JOB_NAME} build № ${env.BUILD_NUMBER}", status: 'Succesful Build', webhookUrl: "${env.noti}"
 }
